@@ -570,6 +570,69 @@
             font-size: 1.05rem;
         }
         
+        /* Internships Grid */
+        .internships-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .internship-item {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(249, 115, 22, 0.1));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--white);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .internship-item::before {
+            content: '💼';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.6;
+            transition: all 0.4s ease;
+        }
+        
+        .internship-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .internship-item:hover::after {
+            left: 100%;
+        }
+        
+        .internship-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--orange);
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(59, 130, 246, 0.15));
+            box-shadow: 0 20px 50px rgba(249, 115, 22, 0.4);
+        }
+        
+        .internship-item:hover::before {
+            left: 15px;
+            opacity: 1;
+            transform: translateY(-50%) scale(1.3);
+        }
+        
         /* Why Choose Us */
         #why-us {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -1183,6 +1246,42 @@
                 <div class="course-icon">🔒</div>
                 <h3>Cybersecurity</h3>
                 <p>Protect systems and networks from digital threats. Understand ethical hacking, security protocols, and defensive strategies through practical scenarios.</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 5rem;">
+            <h3 class="section-subtitle" style="font-size: 2.2rem; margin-bottom: 3rem; color: var(--white);">🚀 Available Internship Positions</h3>
+            <div class="internships-grid">
+                <div class="internship-item">React.js Web Development Intern</div>
+                <div class="internship-item">MERN Stack Web Development Intern</div>
+                <div class="internship-item">.NET Web Development Intern</div>
+                <div class="internship-item">Figma Web Development Intern</div>
+                <div class="internship-item">Figma App Development Intern</div>
+                <div class="internship-item">Full Stack Web Development Intern</div>
+                <div class="internship-item">Frontend Web Development Intern</div>
+                <div class="internship-item">Backend Web Development Intern</div>
+                <div class="internship-item">C, C++ Programming Intern</div>
+                <div class="internship-item">Software Development Intern</div>
+                <div class="internship-item">Embedded Systems Intern</div>
+                <div class="internship-item">Digital Marketing Intern</div>
+                <div class="internship-item">App Development Intern</div>
+                <div class="internship-item">Java Programming Intern</div>
+                <div class="internship-item">Python Programming Intern</div>
+                <div class="internship-item">Data Analytics Intern</div>
+                <div class="internship-item">SQL Intern</div>
+                <div class="internship-item">DevOps Intern</div>
+                <div class="internship-item">Power BI Intern</div>
+                <div class="internship-item">Cloud Computing Intern</div>
+                <div class="internship-item">Blockchain Technology Intern</div>
+                <div class="internship-item">Software Testing Intern</div>
+                <div class="internship-item">Automation Testing Intern</div>
+                <div class="internship-item">Big Data Intern</div>
+                <div class="internship-item">.NET Intern</div>
+                <div class="internship-item">Data Science Intern</div>
+                <div class="internship-item">UI/UX Intern</div>
+                <div class="internship-item">ML, AI & IoT Intern</div>
+                <div class="internship-item">VLSI Intern</div>
+                <div class="internship-item">Cybersecurity & Ethical Hacking Intern</div>
             </div>
         </div>
     </section>
