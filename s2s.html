@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Step2Start is an MSME-registered EdTech company by Shreyas Shridhar Kulkarni, offering software training, internships, and game-based learning both online and offline. With a vision to grow into a full-fledged company and establish a college, we are shaping the next generation of skilled professionals.">
+    <meta name="keywords" content="EdTech, software training, internships, game-based learning, online courses, offline courses, MSME registered, Full Stack, AI, App Development, Cybersecurity">
+    <meta name="author" content="Shreyas Shridhar Kulkarni">
+    <title>Step2Start - Learn by Playing. Grow by Doing.</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --orange: #f97316;
+            --green: #10b981;
+            --white: #ffffff;
+            --light-gray: #f3f4f6;
+            --dark-gray: #1f2937;
+            --text-gray: #6b7280;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+        
+        /* Animated Background Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: linear-gradient(135deg, var(--light-blue), var(--orange));
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: particleFloat linear infinite;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+            transform: translateY(0);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover img {
+            filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.4));
+            transform: rotate(-5deg);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--light-blue), var(--orange));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light-blue);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu span {
+            width: 28px;
+            height: 3px;
+            background: var(--dark-gray);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        /* Hero Section with 3D Effects */
+        .hero {
+            margin-top: 70px;
+            min-height: 95vh;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -250px;
+            right: -200px;
+            animation: float3D 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(249,115,22,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -100px;
+            animation: float3D 10s ease-in-out infinite reverse;
+            transform-style: preserve-3d;
+        }
+        
+        .hero-bg-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+            animation: rotate3D 20s linear infinite;
+            transform-style: preserve-3d;
+        }
+        
+        .shape.cube {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--orange), var(--green));
+            top: 20%;
+            left: 10%;
+            animation: rotate3D 15s linear infinite, float3D 6s ease-in-out infinite;
+        }
+        
+        .shape.circle {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--light-blue), var(--white));
+            border-radius: 50%;
+            top: 60%;
+            right: 15%;
+            animation: pulse3D 4s ease-in-out infinite;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 10;
+            padding: 2rem;
+            max-width: 1000px;
+            transform-style: preserve-3d;
+            animation: floatContent 3s ease-in-out infinite;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: slideDown 1s ease, textGlow 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+            letter-spacing: 2px;
+        }
+        
+        .hero .tagline {
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: slideUp 1s ease;
+            letter-spacing: 1px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .btn {
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--orange), #fb923c);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(249,115,22,0.5);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(249,115,22,0.7);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-blue);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.4);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255,255,255,0.6);
+            background: linear-gradient(135deg, #fff, #f0f9ff);
+        }
+        
+        /* Section Styles with 3D */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange), var(--green));
+            border-radius: 2px;
+            animation: widthPulse 2s ease-in-out infinite;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 4rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* About Section with 3D Cards */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+            perspective: 1000px;
+        }
+        
+        .about-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(249, 115, 22, 0.1));
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .about-card:hover::before {
+            opacity: 1;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg) scale(1.05);
+            box-shadow: 0 25px 60px rgba(59, 130, 246, 0.3);
+        }
+        
+        .about-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-card p {
+            color: var(--text-gray);
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Courses Section with 3D */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+            perspective: 1500px;
+        }
+        
+        .course-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border-top: 5px solid var(--light-blue);
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+        
+        .course-card:hover::after {
+            top: -100%;
+            right: -100%;
+        }
+        
+        .course-card:nth-child(2) {
+            border-top-color: var(--orange);
+        }
+        
+        .course-card:nth-child(3) {
+            border-top-color: var(--green);
+        }
+        
+        .course-card:nth-child(4) {
+            border-top-color: #8b5cf6;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-25px) rotateX(10deg) scale(1.05);
+            box-shadow: 0 30px 70px rgba(59, 130, 246, 0.25);
+        }
+        
+        .course-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+        }
+        
+        .course-card:hover .course-icon {
+            animation: spin3D 1s ease-in-out;
+        }
+        
+        .course-card h3 {
+            color: var(--dark-gray);
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .course-card p {
+            color: var(--text-gray);
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Why Choose Us with 3D */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+            perspective: 1000px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            position: relative;
+        }
+        
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--light-blue), var(--orange));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .feature-item:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-item:hover {
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            color: var(--white);
+            transform: translateY(-20px) rotateX(10deg) scale(1.08);
+            box-shadow: 0 25px 60px rgba(59, 130, 246, 0.4);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.15));
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: rotateY(360deg) scale(1.2);
+        }
+        
+        .feature-item h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover h3,
+        .feature-item:hover p {
+            color: var(--white);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: transparent;
+        }
+        
+        .testimonial-placeholder {
+            text-align: center;
+            padding: 4rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,250,252,0.9));
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-placeholder:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 70px rgba(59, 130, 246, 0.2);
+        }
+        
+        .testimonial-placeholder p {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        /* Future Vision with 3D */
+        .vision-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            color: var(--white);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(30,64,175,0.4);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vision-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate3D 20s linear infinite;
+        }
+        
+        .vision-content:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 30px 80px rgba(30,64,175,0.5);
+        }
+        
+        .vision-content h3 {
+            font-size: 2.3rem;
+            margin-bottom: 1.8rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .vision-content p {
+            font-size: 1.3rem;
+            line-height: 2;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+            perspective: 1000px;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(248,250,252,0.95));
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            border: 2px solid rgba(59, 130, 246, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: all 0.6s ease;
+        }
+        
+        .contact-item:hover::after {
+            left: 100%;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-15px) rotateX(5deg) scale(1.05);
+            box-shadow: 0 25px 70px rgba(59, 130, 246, 0.25);
+            border-color: var(--light-blue);
+        }
+        
+        .contact-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 5px 15px rgba(59, 130, 246, 0.3));
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.2) rotateY(360deg);
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        
+        .contact-item a {
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            color: var(--orange);
+            text-decoration: underline;
+        }
+        
+        .contact-item p {
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+        
+        /* Footer with 3D */
+        footer {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--light-blue), var(--orange), var(--green), var(--light-blue));
+            background-size: 200% 100%;
+            animation: gradientSlide 3s linear infinite;
+        }
+        
+        footer p {
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .footer-highlight {
+            color: var(--orange);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(249, 115, 22, 0.5);
+        }
+        
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes float3D {
+            0%, 100% {
+                transform: translateY(0) translateZ(0) rotateX(0);
+            }
+            50% {
+                transform: translateY(-30px) translateZ(50px) rotateX(10deg);
+            }
+        }
+        
+        @keyframes floatContent {
+            0%, 100% {
+                transform: translateY(0) translateZ(0);
+            }
+            50% {
+                transform: translateY(-10px) translateZ(20px);
+            }
+        }
+        
+        @keyframes rotate3D {
+            from {
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        
+        @keyframes pulse3D {
+            0%, 100% {
+                transform: scale(1) translateZ(0);
+                opacity: 0.15;
+            }
+            50% {
+                transform: scale(1.1) translateZ(30px);
+                opacity: 0.25;
+            }
+        }
+        
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(59, 130, 246, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(255,255,255,0.8), 0 0 60px rgba(59, 130, 246, 0.5);
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        @keyframes spin3D {
+            from {
+                transform: rotateY(0);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        @keyframes titleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @keyframes widthPulse {
+            0%, 100% {
+                width: 100px;
+            }
+            50% {
+                width: 150px;
+            }
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.1;
+            }
+            90% {
+                opacity: 0.1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes gradientSlide {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 1.5rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                gap: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="step2start logo.jpg" alt="Step2Start Logo">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape cube"></div>
+            <div class="shape circle"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Step2Start</h1>
+            <p class="tagline">Learn by Playing. Grow by Doing.</p>
+            <div class="cta-buttons">
+                <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                <a href="#contact" class="btn btn-secondary">Join Internship</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="fade-in">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-subtitle">Revolutionizing education through innovation and engagement</p>
+        <div class="about-content">
+            <div class="about-card">
+                <h3>Our Vision</h3>
+                <p>To transform the educational landscape by making learning engaging, practical, and accessible. Step2Start aims to grow from a premier training institute into a full-fledged educational institution with our own college.</p>
+            </div>
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>We empower students with cutting-edge software skills through our unique game-based learning methodology, combining the best of online and offline education with real-world internship opportunities.</p>
+            </div>
+            <div class="about-card">
+                <h3>What Makes Us Unique</h3>
+                <p>Our innovative game-based learning approach turns complex concepts into engaging challenges. Students don't just learn—they play, experiment, and master skills in an environment that mirrors real-world scenarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses & Internships -->
+    <section id="courses" class="fade-in">
+        <h2 class="section-title">Courses & Internships</h2>
+        <p class="section-subtitle">Master the skills that matter in today's tech industry</p>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-icon">💻</div>
+                <h3>Full Stack Development</h3>
+                <p>Master front-end and back-end technologies. Build complete web applications from scratch with hands-on projects and real-world internship experience.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🤖</div>
+                <h3>Artificial Intelligence</h3>
+                <p>Dive into machine learning, deep learning, and AI applications. Learn to build intelligent systems through interactive game-based modules.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">📱</div>
+                <h3>App Development</h3>
+                <p>Create powerful mobile applications for Android and iOS. Learn modern frameworks and best practices through engaging, project-based learning.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🔒</div>
+                <h3>Cybersecurity</h3>
+                <p>Protect systems and networks from digital threats. Understand ethical hacking, security protocols, and defensive strategies through practical scenarios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="fade-in">
+        <h2 class="section-title">Why Choose Step2Start</h2>
+        <p class="section-subtitle">Your success is our priority</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <h3>MSME Registered</h3>
+                <p>Officially recognized and trusted education provider</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎮</div>
+                <h3>Game-Based Learning</h3>
+                <p>Learn complex concepts through engaging games</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌐</div>
+                <h3>Online + Offline</h3>
+                <p>Flexible learning modes to suit your schedule</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💼</div>
+                <h3>Internship Programs</h3>
+                <p>Gain real-world experience while you learn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials fade-in">
+        <h2 class="section-title">Student Success Stories</h2>
+        <p class="section-subtitle">Building the next generation of skilled professionals</p>
+        <div class="testimonial-placeholder">
+            <p>"Our students are making waves in the tech industry. Success stories coming soon!"</p>
+        </div>
+    </section>
+
+    <!-- Future Vision -->
+    <section id="vision" class="fade-in">
+        <h2 class="section-title">Future Vision</h2>
+        <div class="vision-content">
+            <h3>From Training to College: Building the Future of Education</h3>
+            <p>Step2Start is on a mission to revolutionize education. We're expanding from a specialized training institute into a comprehensive educational ecosystem. Our vision includes establishing a full-fledged college that continues our tradition of innovative, game-based learning while offering degree programs and advanced certifications. Together, we're shaping the future of how students learn and grow.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="fade-in">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Let's start your learning journey today</p>
+        <div class="contact-content">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="mailto:info@step2start.com">info@step2start.com</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🌐</div>
+                <h3>Social Media</h3>
+                <p>Connect with us on LinkedIn, Twitter, and Instagram</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Step2Start</strong> - MSME Registered EdTech Company</p>
+        <p>Owned by <span class="footer-highlight">Shreyas Shridhar Kulkarni</span></p>
+        <p>&copy; 2025 Step2Start. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Create Animated Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 10 + 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 20 + 15 + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Sticky Navigation with 3D Effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            const spans = mobileMenu.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                const spans = mobileMenu.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+
+        // Advanced Scroll Animation with 3D
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Parallax Effect on Hero
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-content');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // 3D Tilt Effect on Cards
+        function addTiltEffect(selector) {
+            const cards = document.querySelectorAll(selector);
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', function(e) {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-20px) scale(1.05)`;
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    card.style.transform = '';
+                });
+            });
+        }
+        
+        addTiltEffect('.about-card');
+        addTiltEffect('.course-card');
+        addTiltEffect('.feature-item');
+        addTiltEffect('.contact-item');
+
+        // Smooth scroll offset for fixed navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate Course Icons on Hover
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.course-icon');
+                icon.style.animation = 'spin3D 0.8s ease-in-out';
+            });
+            
+            card.addEventListener('animationend', function() {
+                const icon = this.querySelector('.course-icon');
+                icon.style.animation = 'bounce 2s ease-in-out infinite';
+            });
+        });
+    </script>
+</body>
+</html>
