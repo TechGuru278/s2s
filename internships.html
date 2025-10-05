@@ -1,138 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="fig.png" type="image/png">
-<meta property="og:image" content="step2start logo.png">
-<meta property="og:title" content="Step 2 Start – Internship & Skill Development Startup">
-  <meta name="og:description" content="Explore Step 2 Start's wide range of internships including Web Development, App Development, AI, Data Science, Cybersecurity, and more. Gain hands-on experience and build your career.">
-  <title>Internships - Step 2 Start (step2start)</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Step 2 Start internships: Web Development, App Development, AI, Data Science, Cybersecurity & more. Gain real-world experience with hands-on projects.">
+  <meta name="keywords" content="Step 2 Start internships, web development internship, app development internship, data science internship, cybersecurity internship, programming internship">
+  <meta name="author" content="Step 2 Start">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Internships - Step 2 Start | Skill Development & Career Opportunities">
+  <meta property="og:image" content="step2start logo.png">
+  <meta property="og:description" content="Explore Step 2 Start's wide range of internships including Web Development, App Development, AI, Data Science, Cybersecurity, and more. Gain hands-on experience and build your career.">
+  <meta property="og:url" content="https://www.step2start.com/internships">
+  <meta property="og:type" content="website">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Step 2 Start Internship Programs",
+    "description": "Comprehensive internship programs in technology and development fields",
+    "url": "https://www.step2start.com/internships",
+    "numberOfItems": "25",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "EducationalOccupationalProgram",
+          "name": "React.js Web Development Intern",
+          "description": "Hands-on internship in React.js web development"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "EducationalOccupationalProgram",
+          "name": "MERN Stack Web Development Intern",
+          "description": "Full-stack development internship using MongoDB, Express, React, and Node.js"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "EducationalOccupationalProgram",
+          "name": "Data Science Intern",
+          "description": "Internship focusing on data analysis, machine learning, and data visualization"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "EducationalOccupationalProgram",
+          "name": "Cybersecurity & Ethical Hacking Intern",
+          "description": "Security-focused internship covering cybersecurity principles and ethical hacking techniques"
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <title>Internships at Step 2 Start | Web Development, AI, Data Science & Cybersecurity</title>
+  
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary: #0056b3;
+      --secondary: #ff6b00;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --gray: #6c757d;
+    }
+    
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      box-sizing: border-box;
     }
-
-    header {
-      background-color: #0056b3;
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--primary), #003d82);
       color: white;
-      padding: 20px 0;
-      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
+    
     .container {
       width: 90%;
-      max-width: 1000px;
-      margin: 20px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
-    h2 {
-      color: #0056b3;
-      margin-top: 20px;
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
-    ul {
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+    
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .logo span {
+      color: var(--secondary);
+    }
+    
+    .nav-links {
+      display: flex;
       list-style: none;
-      padding-left: 0;
     }
-
-    li {
-      background: #e6f0ff;
-      margin: 10px 0;
-      padding: 15px;
-      border-left: 5px solid #0056b3;
-      border-radius: 4px;
-      transition: transform 0.2s;
+    
+    .nav-links li {
+      margin-left: 25px;
     }
-
-    li:hover {
-      transform: translateX(5px);
-      background: #cce0ff;
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-
-    footer {
+    
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 61, 130, 0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
       text-align: center;
-      padding: 15px 0;
-      background-color: #f1f1f1;
-      color: #555;
-      margin-top: 30px;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
+    
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background-color: #e55a00;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .content-section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 3px;
+      background-color: var(--secondary);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .intro-text {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+    
+    .internship-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    
+    .category-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .category-card h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .category-icon {
+      font-size: 1.8rem;
+      margin-right: 10px;
+    }
+    
+    .internship-list {
+      list-style: none;
+    }
+    
+    .internship-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    
+    .internship-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .internship-list li:before {
+      content: "▸";
+      color: var(--secondary);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    
+    .benefits-section {
+      background-color: #f1f7ff;
+      padding: 80px 0;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .benefit-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .benefit-icon {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+    
+    .benefit-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .apply-section {
+      text-align: center;
+      padding: 50px 0;
+    }
+    
+    .apply-box {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .apply-box h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .apply-box p {
+      margin-bottom: 20px;
+      color: var(--gray);
+    }
+    
+    .footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 50px 0 20px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-column h3 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #adb5bd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #495057;
+      color: #adb5bd;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
       }
-
-      li {
-        font-size: 0.9em;
+      
+      .logo {
+        margin-bottom: 15px;
+      }
+      
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      
+      .nav-links li {
+        margin: 0 10px 10px;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Step 2 Start Internships</h1>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <!-- Replace with actual logo image -->
+          <img src="step2start logo.png" alt="Step 2 Start Logo">
+          <h1>Step 2 <span>Start</span></h1>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <section class="intro">
-      <h2>Kickstart Your Career with Step 2 Start</h2>
-      <p>At Step 2 Start, we provide hands-on internship opportunities for students and freshers across various domains. Gain real-world experience, improve your skills, and build a strong portfolio for your future career.</p>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h2>Step 2 Start Internships</h2>
+      <p>Kickstart your career with hands-on internship opportunities in cutting-edge technologies. Gain real-world experience, build your portfolio, and accelerate your professional growth.</p>
+      <a href="#apply" class="btn">Apply Now</a>
+    </div>
+  </section>
 
-    <section class="internship-list">
-      <h2>Available Internship Programs</h2>
-      <ul>
-        <li>React.js Web Development Intern</li>
-        <li>MERN Stack Web Development Intern</li>
-        <li>.NET Web Development Intern</li>
-        <li>Full Stack Web Development Intern</li>
-        <li>Frontend Web Development Intern</li>
-        <li>Backend Web Development Intern</li>
-        <li>App Development Intern</li>
-        <li>Figma Web Development Intern</li>
-        <li>Figma App Development Intern</li>
-        <li>C, C++ Programming Intern</li>
-        <li>Java Programming Intern</li>
-        <li>Python Programming Intern</li>
-        <li>Data Analytics Intern</li>
-        <li>SQL Intern</li>
-        <li>DevOps Intern</li>
-        <li>Power BI Intern</li>
-        <li>Cloud Computing Intern</li>
-        <li>Blockchain Technology Intern</li>
-        <li>Software Testing Intern</li>
-        <li>Automation Testing Intern</li>
-        <li>Data Science Intern</li>
-        <li>UI/UX Intern</li>
-        <li>ML, AI & IoT Intern</li>
-        <li>VLSI Intern</li>
-        <li>Cybersecurity & Ethical Hacking Intern</li>
-      </ul>
-    </section>
+  <section class="content-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Internship Programs</h2>
+      </div>
+      <div class="intro-text">
+        <p>At Step 2 Start, we provide comprehensive internship opportunities for students and freshers across various technology domains. Our programs are designed to bridge the gap between academic learning and industry requirements.</p>
+      </div>
+      
+      <div class="internship-categories">
+        <div class="category-card">
+          <h3><span class="category-icon">🌐</span> Web Development</h3>
+          <ul class="internship-list">
+            <li>React.js Web Development Intern</li>
+            <li>MERN Stack Web Development Intern</li>
+            <li>.NET Web Development Intern</li>
+            <li>Full Stack Web Development Intern</li>
+            <li>Frontend Web Development Intern</li>
+            <li>Backend Web Development Intern</li>
+            <li>Figma Web Development Intern</li>
+          </ul>
+        </div>
+        
+        <div class="category-card">
+          <h3><span class="category-icon">📱</span> App Development</h3>
+          <ul class="internship-list">
+            <li>App Development Intern</li>
+            <li>Figma App Development Intern</li>
+          </ul>
+        </div>
+        
+        <div class="category-card">
+          <h3><span class="category-icon">💻</span> Programming</h3>
+          <ul class="internship-list">
+            <li>C, C++ Programming Intern</li>
+            <li>Java Programming Intern</li>
+            <li>Python Programming Intern</li>
+          </ul>
+        </div>
+        
+        <div class="category-card">
+          <h3><span class="category-icon">📊</span> Data & Analytics</h3>
+          <ul class="internship-list">
+            <li>Data Analytics Intern</li>
+            <li>SQL Intern</li>
+            <li>Power BI Intern</li>
+            <li>Data Science Intern</li>
+          </ul>
+        </div>
+        
+        <div class="category-card">
+          <h3><span class="category-icon">☁️</span> Cloud & DevOps</h3>
+          <ul class="internship-list">
+            <li>DevOps Intern</li>
+            <li>Cloud Computing Intern</li>
+          </ul>
+        </div>
+        
+        <div class="category-card">
+          <h3><span class="category-icon">🔒</span> Security & Emerging Tech</h3>
+          <ul class="internship-list">
+            <li>Cybersecurity & Ethical Hacking Intern</li>
+            <li>Blockchain Technology Intern</li>
+            <li>ML, AI & IoT Intern</li>
+            <li>VLSI Intern</li>
+          </ul>
+        </div>
+        
+        <div class="category-card">
+          <h3><span class="category-icon">🧪</span> Testing & Design</h3>
+          <ul class="internship-list">
+            <li>Software Testing Intern</li>
+            <li>Automation Testing Intern</li>
+            <li>UI/UX Intern</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="apply">
-      <h2>How to Apply</h2>
-      <p>Interested in any of our internship programs? Send your resume to <strong>contact@step2start.com</strong> or use our <a href="https://www.step2start.com/contact">contact page</a> to apply directly. Make sure to mention the internship you are applying for in your message.</p>
-    </section>
-  </div>
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Our Internships</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Real-World Projects</h3>
+          <p>Work on industry-relevant projects that enhance your portfolio and practical skills.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">👨‍🏫</div>
+          <h3>Expert Mentorship</h3>
+          <p>Learn from industry professionals with years of experience in their respective fields.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">📜</div>
+          <h3>Certification</h3>
+          <p>Receive a completion certificate that validates your skills and experience.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">💼</div>
+          <h3>Career Support</h3>
+          <p>Get guidance on resume building, interview preparation, and job placement.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">⏱️</div>
+          <h3>Flexible Duration</h3>
+          <p>Choose internship durations that fit your schedule and learning goals.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">🌍</div>
+          <h3>Remote Options</h3>
+          <p>Many of our internships can be completed remotely for your convenience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    &copy; 2025 Step 2 Start. All Rights Reserved.
+  <section class="content-section" id="apply">
+    <div class="container">
+      <div class="apply-section">
+        <div class="apply-box">
+          <h2>How to Apply</h2>
+          <p>Ready to kickstart your career with a Step 2 Start internship? Follow these simple steps to apply:</p>
+          <ol style="text-align: left; max-width: 500px; margin: 20px auto; color: var(--gray);">
+            <li style="margin-bottom: 10px;">Browse our internship programs and select the one that matches your interests</li>
+            <li style="margin-bottom: 10px;">Prepare your updated resume and a brief introduction</li>
+            <li style="margin-bottom: 10px;">Send your application to <strong>steptwostart@gmail.com</strong></li>
+            <li style="margin-bottom: 10px;">Mention the specific internship you're applying for in the subject line</li>
+            <li>Our team will review your application and contact you within 3-5 business days</li>
+          </ol>
+          <p>You can also use our <a href="contact.html" style="color: var(--primary);">contact form</a> to apply directly.</p>
+          <a href="contact.html" class="btn">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Step 2 Start</h3>
+          <p>Empowering students with cutting-edge software skills through practical learning experiences.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Internships</h3>
+          <ul class="footer-links">
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">App Development</a></li>
+            <li><a href="#">Data Science</a></li>
+            <li><a href="#">Cybersecurity</a></li>
+            <li><a href="#">So,on</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="footer-links">
+            <li>Email: <a href="mailto:steptwostart@gmail.com">steptwostart@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Step 2 Start. All Rights Reserved.
+      </div>
+    </div>
   </footer>
 </body>
-</html>
 
+</html>
