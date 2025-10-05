@@ -224,6 +224,16 @@
             font-size: 0.9rem;
         }
         
+        .course-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .course-card a:hover {
+            text-decoration: underline;
+        }
+        
         .stamp-section {
             background: linear-gradient(135deg, var(--primary), #003d82);
             color: white;
@@ -276,6 +286,41 @@
         
         .stamp-content p {
             margin-bottom: 20px;
+        }
+        
+        /* New Logo Section Styles */
+        .logo-section {
+            background-color: white;
+            padding: 60px 0;
+        }
+        
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .logo-item {
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .logo-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-item img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .logo-item p {
+            color: var(--gray);
+            font-weight: 500;
         }
         
         .footer {
@@ -335,10 +380,11 @@
             
             .nav-links {
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
             .nav-links li {
-                margin: 0 10px;
+                margin: 0 10px 10px;
             }
             
             .hero h2 {
@@ -347,6 +393,10 @@
             
             .stamp-container {
                 flex-direction: column;
+            }
+            
+            .logo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
         }
     </style>
@@ -358,9 +408,16 @@
             <div class="header-content">
                 <div class="logo">
                     <!-- Replace with actual logo image -->
-                    <img src="step2start logo.png" alt="Step 2 Start Logo">
+                    <img src="step2start-logo.png" alt="Step 2 Start Logo">
                     <h1>Step 2 <span>Start</span></h1>
                 </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="internships.html">Internships</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -398,6 +455,37 @@
         </div>
     </section>
 
+    <!-- New Logo Section -->
+    <section class="logo-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Recognitions</h2>
+            </div>
+            <div class="logo-grid">
+                <div class="logo-item">
+                    <img src="step2start logo.png" alt="Step 2 Start Logo">
+                    <p>Step 2 Start</p>
+                </div>
+                <div class="logo-item">
+                    <img src="MSME.png" alt="MSME Registered Logo">
+                    <p>MSME Registered</p>
+                </div>
+                <div class="logo-item">
+                    <img src="stamp.png" alt="Official Stamp">
+                    <p>Official Stamp</p>
+                </div>
+                <div class="logo-item">
+                    <img src="interbadge.png" alt="Recognition Logo 1">
+                    <p>Industry Recognition</p>
+                </div>
+                <div class="logo-item">
+                    <img src="fig.png" alt="Recognition Logo 2">
+                    <p>Quality Certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="content-section" style="background-color: #f1f7ff;">
         <div class="container">
             <div class="section-title">
@@ -421,8 +509,8 @@
                     <p>Protect digital assets and learn ethical hacking techniques to secure systems.</p>
                 </div>
                 <div class="course-card">
-                    <h3>So, On</h3>
-                    <p>Visit: <a href='https://www.step2start.com/'>Link</a></p>
+                    <h3>And More</h3>
+                    <p>Visit: <a href='https://www.step2start.com/'>See All Courses</a></p>
                 </div>
             </div>
         </div>
@@ -459,8 +547,8 @@
                     <p>UI/UX Design, Figma, Digital Marketing</p>
                 </div>                
                 <div class="about-card">
-                    <h3>So, On</h3>
-                    <p>Visit: <a href='https://www.step2start.com/'>Link</a></p>
+                    <h3>And More</h3>
+                    <p>Visit: <a href='https://www.step2start.com/'>See All Internships</a></p>
                 </div>
             </div>
         </div>
@@ -471,6 +559,7 @@
             <div class="stamp-container">
                 <div class="stamp">
                     <!-- Replace with actual stamp image -->
+                    <img src="msme-stamp.png" alt="MSME Stamp" style="width: 80px; height: 80px; margin-bottom: 10px;">
                     <h3>MSME</h3>
                     <p>Registered</p>
                 </div>
@@ -491,19 +580,29 @@
                     <p>Empowering students with cutting-edge software skills through practical learning experiences.</p>
                 </div>
                 <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="internships.html">Internships</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
                     <h3>Courses</h3>
                     <ul class="footer-links">
                         <li><a href="#">Full Stack Development</a></li>
                         <li><a href="#">AI & Machine Learning</a></li>
                         <li><a href="#">App Development</a></li>
                         <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">So, On</a></li>
+                        <li><a href="#">And More</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li>Email: steptwostart@gmail.com</li>
+                        <li>Email: <a href="mailto:steptwostart@gmail.com">steptwostart@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -515,4 +614,3 @@
 </body>
 
 </html>
-
